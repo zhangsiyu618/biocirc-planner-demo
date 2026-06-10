@@ -1,5 +1,6 @@
 import { options } from "../data";
 import { ComparisonTable } from "./ComparisonTable";
+import { ResultsHero } from "./DashboardIllustrations";
 import { EnvironmentalImpact } from "./EnvironmentalImpact";
 import { OptionCard } from "./OptionCard";
 import { QuickInsights } from "./QuickInsights";
@@ -13,12 +14,13 @@ export function GeneratedOptionsPanel({ onUnavailable }) {
         <div>
           <p className="eyebrow eyebrow-green">Generated solutions</p>
           <h2>Generated Waste-to-Energy Options</h2>
-          <p className="results-copy">AI-generated solutions tailored to your community.</p>
         </div>
         <button className="secondary-button" onClick={onUnavailable} type="button">
           <span>View Assumptions</span>
         </button>
       </div>
+
+      <ResultsHero />
 
       <div className="options-grid">
         {options.map((option) => (

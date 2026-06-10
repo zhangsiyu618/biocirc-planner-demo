@@ -28,7 +28,7 @@ export function Header({ onUnavailable }) {
         ))}
         <button className="profile-chip" type="button" onClick={onUnavailable}>
           <Icon name="user" />
-          <span>Dr. A. Patel | Planner</span>
+          <span>Planner Workspace</span>
         </button>
       </nav>
     </header>

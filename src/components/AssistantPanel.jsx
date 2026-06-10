@@ -1,14 +1,24 @@
 import { useState } from "react";
+import { ConversationAvatar } from "./DashboardIllustrations";
 import { Icon } from "./Icon";
 
 function MessageBubble({ message }) {
+  const identity = message.role === "assistant" ? "BioCirc AI" : "User";
+  const meta = message.role === "assistant" ? "LLM planning assistant" : "Planner";
+
   return (
     <article className={`message message-${message.role}`}>
-      <div className="message-badge">{message.role === "assistant" ? "AI" : "You"}</div>
-      <div className="message-body">
-        {message.content.split("\n").map((line, index) => (
-          <p key={`${message.role}-${index}`}>{line || "\u00A0"}</p>
-        ))}
+      <ConversationAvatar role={message.role} />
+      <div className="message-content">
+        <div className="message-meta">
+          <div className="message-identity">{identity}</div>
+          <div className="message-role-label">{meta}</div>
+        </div>
+        <div className="message-body">
+          {message.content.split("\n").map((line, index) => (
+            <p key={`${message.role}-${index}`}>{line || "\u00A0"}</p>
+          ))}
+        </div>
       </div>
     </article>
   );
@@ -52,6 +62,24 @@ export function AssistantPanel({ messages, onSendMessage, onUnavailable }) {
         <div className="summary-item">
           <span>Waste stream</span>
           <strong>High organics availability</strong>
+        </div>
+      </div>
+
+      <div className="assistant-visual-band">
+        <div className="assistant-visual-copy">
+          <strong>AI planning workspace</strong>
+          <span>Upload needs. Review options. Export direction.</span>
+        </div>
+        <div className="assistant-visual-art" aria-hidden="true">
+          <div className="assistant-node assistant-node-user">
+            <ConversationAvatar role="user" />
+          </div>
+          <div className="assistant-node assistant-node-ai">
+            <ConversationAvatar role="assistant" />
+          </div>
+          <div className="assistant-visual-link assistant-link-a" />
+          <div className="assistant-visual-link assistant-link-b" />
+          <div className="assistant-pulse" />
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import { inputSections, priorities } from "../data";
+import { CommunityScene } from "./DashboardIllustrations";
 import { Icon } from "./Icon";
 
 export function CommunityInputPanel({ onUnavailable }) {
@@ -12,9 +13,10 @@ export function CommunityInputPanel({ onUnavailable }) {
         <span className="panel-pill panel-pill-green">Live demo</span>
       </div>
       <p className="panel-copy">
-        Provide local context for a personalised design. This demo mirrors a real planning workflow without running live
-        AI or optimisation logic.
+        Provide local context for a personalised design.
       </p>
+
+      <CommunityScene />
 
       <div className="input-stack">
         {inputSections.map((section, index) => (

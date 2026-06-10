@@ -7,8 +7,15 @@ export function SiteOverview() {
         <h3>Site Overview</h3>
         <span className="widget-tag">Concept layout</span>
       </div>
-      <p className="widget-copy">Illustrative footprint for the recommended anaerobic digestion pathway.</p>
       <div className="site-map">
+        <div className="site-map-photo" />
+        <div className="site-map-trees tree-a" />
+        <div className="site-map-trees tree-b" />
+        <div className="site-map-trees tree-c" />
+        <div className="site-pad pad-a" />
+        <div className="site-pad pad-b" />
+        <div className="site-pad pad-c" />
+        <div className="site-pad pad-d" />
         <div className="site-road">
           <Icon name="road" />
           <span>Access road</span>

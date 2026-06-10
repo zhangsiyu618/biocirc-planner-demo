@@ -80,14 +80,9 @@ export const priorities = [
 
 export const starterMessages = [
   {
-    role: "user",
-    content:
-      "Please design personalised waste-to-energy solutions for our remote community using the data provided. Prioritise reliability, affordability, and local employment."
-  },
-  {
     role: "assistant",
     content:
-      "Thanks. I have analysed your community data and local priorities.\n\nSummary of your context:\n- Population: ~1,250\n- Organic waste: high, around 1.2 t/day\n- Land available: 2-5 hectares\n- Existing energy: diesel gensets\n- Technical support: moderate\n- Priorities: lower energy cost, local jobs, and waste management\n\nI generated three feasible waste-to-energy options tailored to your context. You can review each option, compare the trade-offs, and see the recommendation below."
+      "Welcome to BioCirc AI.\n\nPlease enter your needs and community context. I will generate professional waste-to-energy options, compare them, and provide a concise recommendation."
   }
 ];
 
@@ -96,9 +91,11 @@ export const options = [
     id: "A",
     title: "Option A",
     technology: "Anaerobic Digestion",
+    subtitle: "Biogas",
     recommended: true,
     tone: "green",
     flow: ["Organic Waste", "Digester", "Biogas", "CHP Unit", "Electricity"],
+    sideOutput: "Digestate",
     metrics: [
       { label: "Energy Output", value: "180 kWh/day" },
       { label: "Est. Capital Cost", value: "$420,000" },
@@ -120,9 +117,11 @@ export const options = [
     id: "B",
     title: "Option B",
     technology: "Biomass Gasification",
+    subtitle: "Biomass",
     recommended: false,
     tone: "blue",
     flow: ["Biomass Residues", "Gasifier", "Syngas", "Generator", "Electricity"],
+    sideOutput: "Ash/Char",
     metrics: [
       { label: "Energy Output", value: "220 kWh/day" },
       { label: "Est. Capital Cost", value: "$360,000" },
@@ -143,9 +142,11 @@ export const options = [
     id: "C",
     title: "Option C",
     technology: "Waste-to-Energy Combustion",
+    subtitle: "RDF Combustion",
     recommended: false,
     tone: "orange",
     flow: ["Mixed Waste", "RDF Preparation", "Boiler", "Steam Turbine", "Power"],
+    sideOutput: "Ash",
     metrics: [
       { label: "Energy Output", value: "350 kWh/day" },
       { label: "Est. Capital Cost", value: "$680,000" },

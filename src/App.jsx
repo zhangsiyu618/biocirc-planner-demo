@@ -17,11 +17,7 @@ export default function App() {
   };
 
   const handleSendMessage = (message) => {
-    setMessages((current) => [
-      ...current,
-      { role: "user", content: message },
-      { role: "assistant", content: unavailableMessage }
-    ]);
+    setMessages((current) => [...current, { role: "assistant", content: unavailableMessage }]);
     showUnavailable();
   };
 
